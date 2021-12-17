@@ -1,0 +1,18 @@
+#jdbc
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://8.210.219.21:3306/test?serverTimezone=Asia/Shanghai
+    username: root
+    password: 1qaz@WSX
+logging:
+  level:
+    com.wormchaos.dao: INFO
+server:
+  port: 443
+  ssl:
+    protocol: TLS
+    key-store: /download/5150012_www.wormchaos.top.pfx
+    key-store-password: FQU670up
+    key-store-type: JKS
+

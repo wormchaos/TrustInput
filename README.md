@@ -1,1 +1,1 @@
-test
+readme file for trustinput

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wormchaos.dao.UserMapper">
+    <resultMap id="getMap" type="com.wormchaos.entity.User"/>
+
+    <select id="getUserByUserId" parameterType="Long" resultMap="getMap">
+        SELECT * FROM t_user WHERE user_id = #{userId} limit 1
+    </select>
+    <select id="getUserByOpenId" parameterType="String" resultMap="getMap">
+        SELECT * FROM t_user WHERE open_id = #{openId} limit 1
+    </select>
+
+    <select id="getMaxUserId"  resultType="Long">
+        SELECT max(user_id) FROM t_user
+    </select>
+
+    <update id="updateAllowMessage" >
+        update t_user set allow_message = #{allowMessage} where user_id = #{userId}
+    </update>
+
+    <select id="getUsersByGroup" resultMap="getMap" parameterType="Integer">
+        select u.* from t_snail s left join t_user u
+        on s.user_id = u.user_id
+        where s.group_id = #{groupId} and u.allow_message = 1
+    </select>
+
+
+</mapper>

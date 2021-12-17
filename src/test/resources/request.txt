@@ -1,0 +1,3 @@
+-- 根据code登录，获取token
+http://127.0.0.1:8080/wechatLogin?token=03fdaf921bc324a579fde1dabeb5e4c3
+{"code":1,"desc":null,"data":null,"token":"03fdaf921bc324a579fde1dabeb5e4c3"}
